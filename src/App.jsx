@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Contact from "./pages/Contact";
 
 const Recipes = () => <div>Page Recettes</div>;
 const Details = () => <div>Page Détails</div>;
-const Contact = () => <div>Page Contact</div>;
+// const Contact = () => <div>Page Contact</div>;
 const Admin = () => <div>Espace Admin</div>;
 
 function App() {
