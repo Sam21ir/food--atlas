@@ -1,0 +1,62 @@
+.add-rec-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding-right: 40px;
+}
+.add-rec-container h2 {
+  text-align: center;
+  color: #ff7b00; /* Orange */
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+  background-color: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff7b00;
+  box-shadow: 0 0 4px rgba(255, 123, 0, 0.5);
+}
+/* Button */
+button {
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #e56f00;
+}
