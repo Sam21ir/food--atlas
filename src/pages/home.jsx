@@ -31,7 +31,7 @@ const Home = () => {
         <div className="hero-content">
           <h1>Découvrez les saveurs du monde avec Food Atlas</h1>
           <p>Explorez des recettes authentiques venues du Maroc, d'Italie, du Mexique et ailleurs</p>
-          <Link to="/recettes" className="cta-button">
+          <Link to="/Recettes" className="cta-button">
             {CTA_TEXT}
           </Link>
         </div>
@@ -46,7 +46,7 @@ const Home = () => {
           </div>
           <div className="about-text">
             <p>Food Atlas nous invite à emplesser notre goût avec des saveurs d'une illustre cuisinelle, parmiguer den et des traditions auff aulthiques, et calorations de la cuisine internationale.</p>
-            <Link to="/recettes" className="cta-button secondary">VOIR RECETTES</Link>
+            <Link to="/Recettes" className="cta-button secondary">VOIR RECETTES</Link>
           </div>
           <div className="about-image right">
           
