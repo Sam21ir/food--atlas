@@ -1,7 +1,35 @@
 import React, { useState } from "react";
 import axios from "axios";
+import PopUp from "../components/PopUp";
 
 export default function AddRec() {
+  const handleImageUpload = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const formDataCloud = new FormData();
+  formDataCloud.append("file", file);
+  formDataCloud.append("upload_preset", "addRecieps"); // replace this
+  formDataCloud.append("cloud_name", "dgqoop9qz"); // replace this
+
+  try {
+    const res = await axios.post(
+      `https://api.cloudinary.com/v1_1/dgqoop9qz/image/upload`,
+      formDataCloud
+    );
+
+    // Put the URL inside your "image" state
+    setFormData(prev => ({
+      ...prev,
+      image: res.data.secure_url
+    }));
+
+    console.log("Uploaded:", res.data.secure_url);
+  } catch (err) {
+    console.error(err);
+    alert("Image upload failed.");
+  }
+};
   const [formData, setFormData] = useState({
     nom: "",
     pays: "",
@@ -12,6 +40,7 @@ export default function AddRec() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     setFormData(prev => ({ 
@@ -20,10 +49,16 @@ export default function AddRec() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  // When clicking "Enregistrer"
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setShowPopup(true); // Show popup instead of alert
+  };
 
-    // 1️⃣ تنظيف النصوص
+  // When user clicks CONFIRM inside the popup
+  const handleConfirm = async () => {
+    setLoading(true);
+
     const trimmed = {
       nom: formData.nom.trim(),
       pays: formData.pays.trim(),
@@ -33,11 +68,9 @@ export default function AddRec() {
       etapes: formData.etapes.trim()
     };
 
-    // 2️⃣ تحويل النصوص إلى arrays
     const ingredientsArray = trimmed.ingredients.split(",").map(i => i.trim());
     const etapesArray = trimmed.etapes.split("\n").map(e => e.trim());
 
-    // 3️⃣ object النهائي لي غادي يتبعت
     const newRecipe = {
       nom: trimmed.nom,
       pays: trimmed.pays,
@@ -47,14 +80,9 @@ export default function AddRec() {
       etapes: etapesArray
     };
 
-    setLoading(true);
-
     try {
-      await axios.post("http://localhost:3001/recipes", newRecipe); //to run the server: "json-server --watch db.json --port 3001"
-
-      alert("Recette ajoutée avec succès !");
-
-      // 4️⃣ reset form
+      await axios.post("http://localhost:3001/recipes", newRecipe);
+      // Reset form
       setFormData({
         nom: "",
         pays: "",
@@ -64,12 +92,18 @@ export default function AddRec() {
         etapes: ""
       });
 
+      setShowPopup(false); // Close popup
     } catch (error) {
-      alert("Erreur lors de l'ajout. Vérifiez le serveur.");
       console.error(error);
+      alert("Error saving recipe.");
     }
 
     setLoading(false);
+  };
+
+  // When user clicks MODIFY inside popup
+  const handleCancel = () => {
+    setShowPopup(false); // Just close popup, do nothing else
   };
 
   return (
@@ -77,7 +111,6 @@ export default function AddRec() {
       <h2>Ajouter une recette</h2>
 
       <form onSubmit={handleSubmit}>
-        
         <label>Nom :</label>
         <input 
           type="text" 
@@ -97,13 +130,11 @@ export default function AddRec() {
         />
 
         <label>Image (URL) :</label>
-        <input 
-          type="text" 
-          name="image"
-          value={formData.image}
-          onChange={handleChange}
-          required
-        />
+          <input
+           type="file"
+           accept="image/*"
+           onChange={handleImageUpload}
+         />
 
         <label>Description :</label>
         <textarea
@@ -121,7 +152,7 @@ export default function AddRec() {
           required
         />
 
-        <label>Étapes (chaque étape sur ligne):</label>
+        <label>Étapes (chaque étape sur une ligne) :</label>
         <textarea
           name="etapes"
           value={formData.etapes}
@@ -132,11 +163,14 @@ export default function AddRec() {
         <button type="submit" disabled={loading}>
           {loading ? "Enregistrement..." : "Enregistrer"}
         </button>
-
       </form>
+
+      {showPopup && (
+        <PopUp 
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
+      )}
     </div>
   );
 }
-
-
-
