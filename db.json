@@ -1,0 +1,221 @@
+
+{
+ "plats":[
+    
+  {
+    "id": 1,
+    "name": "Tajine de Poulet",
+    "category": "Moroccan",
+    "ingredients": "Poulet, citron confit, olives, ail, oignon, épices marocaines",
+    "recette": "Faire revenir le poulet, ajouter oignons, citron, olives et épices puis laisser mijoter.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 2,
+    "name": "Couscous Royal",
+    "category": "Moroccan",
+    "ingredients": "Semoule, légumes, viande, pois chiches, épices",
+    "recette": "Cuire la semoule, préparer les légumes et la viande séparément puis assembler.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 3,
+    "name": "Harira",
+    "category": "Moroccan",
+    "ingredients": "Tomate, lentilles, pois chiches, coriandre, viande",
+    "recette": "Cuire les légumes et légumineuses, ajouter coriandre et viande puis mijoter.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 4,
+    "name": "Pastilla",
+    "category": "Moroccan",
+    "ingredients": "Feuilles de brick, poulet, amandes, cannelle, sucre",
+    "recette": "Cuire le poulet, préparer la farce sucrée-salée et former la pastilla.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+
+  {
+    "id": 5,
+    "name": "Tacos",
+    "category": "Mexican",
+    "ingredients": "Tortillas, viande, tomate, oignon, avocat",
+    "recette": "Cuire la viande, garnir les tortillas avec les légumes et la sauce.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 6,
+    "name": "Guacamole",
+    "category": "Mexican",
+    "ingredients": "Avocats, citron, coriandre, tomate, sel",
+    "recette": "Écraser les avocats et mélanger avec les autres ingrédients.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 7,
+    "name": "Enchiladas",
+    "category": "Mexican",
+    "ingredients": "Tortillas, poulet, sauce tomate épicée, fromage",
+    "recette": "Rouler le poulet dans les tortillas, couvrir de sauce et gratiner.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 8,
+    "name": "Quesadillas",
+    "category": "Mexican",
+    "ingredients": "Tortillas, fromage, poulet, poivrons",
+    "recette": "Garnir la tortilla et la griller jusqu'à ce que le fromage fonde.",
+   "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+
+  {
+    "id": 9,
+    "name": "Pizza Margherita",
+    "category": "Italian",
+    "ingredients": "Pâte, tomate, mozzarella, basilic",
+    "recette": "Étaler la pâte, ajouter les ingrédients et enfourner.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 10,
+    "name": "Pasta Carbonara",
+    "category": "Italian",
+    "ingredients": "Pâtes, œufs, parmesan, pancetta",
+    "recette": "Cuire les pâtes et mélanger hors feu avec la sauce et la pancetta.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 11,
+    "name": "Lasagne",
+    "category": "Italian",
+    "ingredients": "Pâte à lasagne, viande, sauce tomate, béchamel",
+    "recette": "Monter en couches et cuire au four.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 12,
+    "name": "Risotto",
+    "category": "Italian",
+    "ingredients": "Riz arborio, bouillon, parmesan, champignons",
+    "recette": "Cuire le riz en ajoutant le bouillon progressivement.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+
+  {
+    "id": 13,
+    "name": "Paella",
+    "category": "Spanish",
+    "ingredients": "Riz, crevettes, poulet, poivrons, safran",
+    "recette": "Cuire le riz avec les épices et ajouter les viandes.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 14,
+    "name": "Tortilla Española",
+    "category": "Spanish",
+    "ingredients": "Pommes de terre, œufs, oignons",
+    "recette": "Frire les pommes de terre et cuire avec les œufs.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 15,
+    "name": "Gazpacho",
+    "category": "Spanish",
+    "ingredients": "Tomate, concombre, ail, huile d’olive",
+    "recette": "Mixer tous les ingrédients et servir frais.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 16,
+    "name": "Croquetas",
+    "category": "Spanish",
+    "ingredients": "Béchamel, jambon, chapelure",
+    "recette": "Former des boules, paner et frire.",
+   "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+
+  {
+    "id": 17,
+    "name": "Coq au Vin",
+    "category": "French",
+    "ingredients": "Poulet, vin rouge, champignons, oignons",
+    "recette": "Cuire le poulet dans le vin avec légumes.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 18,
+    "name": "Ratatouille",
+    "category": "French",
+    "ingredients": "Aubergine, courgette, tomate, poivron",
+    "recette": "Cuire tous les légumes lentement.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 19,
+    "name": "Quiche Lorraine",
+    "category": "French",
+    "ingredients": "Pâte brisée, crème, œufs, lardons",
+    "recette": "Mélanger la garniture, remplir la pâte et cuire.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+  {
+    "id": 20,
+    "name": "Boeuf Bourguignon",
+    "category": "French",
+    "ingredients": "Bœuf, vin rouge, carottes, oignons",
+    "recette": "Mijoter longtemps avec vin et légumes.",
+    "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png"
+  },
+
+  {
+    "id": 21,
+    "name": "Kebab",
+    "category": "Turkish",
+    "ingredients": "Viande marinée, pain, légumes",
+    "recette": "Griller la viande et servir dans un pain.",
+    "image": "https://res.cloudinary.com/demo/image/upload/v1/kebab.png"
+  },
+  {
+    "id": 22,
+    "name": "Baklava",
+    "category": "Turkish",
+    "ingredients": "Pâte filo, noix, miel",
+    "recette": "Superposer les feuilles, ajouter noix et miel puis cuire.",
+    "image": "https://res.cloudinary.com/demo/image/upload/v1/baklava.png"
+  },
+  {
+    "id": 23,
+    "name": "Lahmacun",
+    "category": "Turkish",
+    "ingredients": "Pâte fine, viande hachée, tomate",
+    "recette": "Étaler la farce épicée sur la pâte puis cuire.",
+    "image": "https://res.cloudinary.com/demo/image/upload/v1/lahmacun.png"
+  },
+  {
+    "id": 24,
+    "name": "Çorba",
+    "category": "Turkish",
+    "ingredients": "Lentilles rouges, tomate, oignons",
+    "recette": "Cuire les lentilles et mixer.",
+    "image": "https://res.cloudinary.com/demo/image/upload/v1/corba.png"
+  }
+]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
