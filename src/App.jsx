@@ -3,7 +3,8 @@ import { Routes ,BrowserRouter ,Route, Link } from 'react-router';
 import navbar from './components/navbar';
 import footer from './components/footer';
 import Recettes from './pages/Recettes';
-import Delete from './pages/delete';
+import Delete from './pages/Delete';
+import Admin from './pages/Admin';
 
 
 
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<home/>} />
           <Route path="/Recettes" element={<Recettes/>} />
           <Route path="/delete" element={<Delete/>} />
+          <Route path="/Admin"  element={<Admin/>}  />
 
         </Routes>
         <footer/>

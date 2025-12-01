@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link , useNavigate} from 'react-router';
-import Card from '../components/Card';
-import './Recettes.css';
+import Card from '../components/Card'
 
-export default function Recettes() {
+export default function Admin() {
   const [db, setDb] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,7 +15,7 @@ export default function Recettes() {
       .then((res) => {
         setDb(res.data);
 
-  // Extract categories
+        // Extract categories
         const uniqueCategories = [...new Set(res.data.map(plat => plat.category))];
         setCategories(uniqueCategories);
       })
@@ -52,15 +51,17 @@ export default function Recettes() {
         <div className='header'>
           <button onClick={()=>{navigate('/')}}>Retour à l'acceuil</button>
           <h1>Our Recettes</h1>
-          <button onClick={()=>{navigate('/Admin')}}>Admin</button>
+          <button onClick={()=>{navigate('/Recettes')}}>Admin</button>
         </div>
         <div className='card'>
           {filteredPlats.map((plat) => (
-            <Card key={plat.id} plat={plat} />
+            <Card key={plat.id} plat={plat} isAdmin ={true} />
           ))}
         </div>
       </section>
 
     </div>
   );
+
+
 }
