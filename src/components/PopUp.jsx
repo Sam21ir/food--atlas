@@ -1,18 +1,19 @@
 import React from "react";
-import "../PopUp.css";
+
 export default function PopUp({ onConfirm, onCancel }) {
   return (
-    <div className="popup-overlay">
-      <div className="popup-box">
-        <h3>Are you sure you want to confirm this recipe?</h3>
+    <div className="popup-edit-overlay">
+      <div className="popup-edit-box">
+        <h3>Confirmer la modification</h3>
+        <p>Voulez-vous vraiment mettre à jour cette recette ?</p>
 
-        <div className="popup-buttons">
+        <div className="popup-edit-buttons">
           <button className="confirm-btn" onClick={onConfirm}>
-            Confirm
+            Confirmer
           </button>
 
           <button className="cancel-btn" onClick={onCancel}>
-            Modify
+            Annuler
           </button>
         </div>
       </div>
