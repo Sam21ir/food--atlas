@@ -9,10 +9,11 @@ export default function RecipeDetails() {
 
   useEffect(() => {
     axios.get(`http://localhost:3001/recipes/${id}`)
-      .then(res => setRecipe(res.data))
+      .then(res => setRecipe(res.data)) 
       .catch(err => console.error(err))
       .finally(() => setLoading(false));
   }, [id]);
+  console.log('===== res est = ', res)
 
   if (loading) return <p>Loading...</p>;
   if (!recipe) return <p>Recette introuvable.</p>;
