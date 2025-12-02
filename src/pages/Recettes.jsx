@@ -8,16 +8,17 @@ export default function Recettes() {
   const [db, setDb] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");   // 🔍 NEW
   const navigate=useNavigate(); 
 
   // GET dishes from API
   useEffect(() => {
-    axios.get("http://localhost:3001/plats")
+    axios.get("http://localhost:3001/recipes")
       .then((res) => {
         setDb(res.data);
 
   // Extract categories
-        const uniqueCategories = [...new Set(res.data.map(plat => plat.category))];
+        const uniqueCategories = [...new Set(res.data.map(plat => plat.pays))];
         setCategories(uniqueCategories);
       })
       .catch((err) => {
@@ -25,10 +26,14 @@ export default function Recettes() {
       });
   }, []);
 
-  // Filter dishes
-  const filteredPlats = selectedCategory
-    ? db.filter((plat) => plat.category === selectedCategory)
-    : [];
+  // Filter recipes
+  const allRecipesFilteredByName = db.filter((plat) =>
+    plat.nom.toLowerCase().startsWith(searchTerm.toLowerCase())
+  );
+
+  const filteredByCategory = db.filter((plat) =>
+    selectedCategory ? plat.pays === selectedCategory : true
+  );
 
   return (
     <div className='RecettesContainer'>
@@ -45,20 +50,48 @@ export default function Recettes() {
                 {cat}
               </button>
             ))}
+            {selectedCategory && (
+            <button onClick={() => setSelectedCategory(null)}>Tout afficher</button>
+          )}
         </div>
       </section>
 
-      <section className='Plats'>
-        <div className='header'>
+      <section className='Recettes'>
+        <section className='header'>
+        
           <button onClick={()=>{navigate('/')}}>Retour à l'acceuil</button>
           <h1>Our Recettes</h1>
           <button onClick={()=>{navigate('/Admin')}}>Admin</button>
-        </div>
-        <div className='card'>
-          {filteredPlats.map((plat) => (
-            <Card key={plat.id} plat={plat} />
-          ))}
-        </div>
+
+          {/* 🔍 SEARCH INPUT */}
+        <input
+          type="text"
+          placeholder="Rechercher un plat..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="searchInput"
+        />
+
+      </section>
+
+       {!selectedCategory ? (
+        <section className='allReciepes'>
+          <div className='card'>
+            {allRecipesFilteredByName.map((plat) => (
+              <Card key={plat.id} plat={plat} />
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section className='Plats'>
+          <div className='card'>
+            {filteredByCategory.map((plat) => (
+              <Card key={plat.id} plat={plat} />
+            ))}
+          </div>
+        </section>
+      )}
+
       </section>
 
     </div>

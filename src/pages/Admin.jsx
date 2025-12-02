@@ -11,12 +11,12 @@ export default function Admin() {
 
   // GET dishes from API
   useEffect(() => {
-    axios.get("http://localhost:3001/plats")
+    axios.get("http://localhost:3001/recipes")
       .then((res) => {
         setDb(res.data);
 
         // Extract categories
-        const uniqueCategories = [...new Set(res.data.map(plat => plat.category))];
+        const uniqueCategories = [...new Set(res.data.map(plat => plat.pays))];
         setCategories(uniqueCategories);
       })
       .catch((err) => {
@@ -26,7 +26,7 @@ export default function Admin() {
 
   // Filter dishes
   const filteredPlats = selectedCategory
-    ? db.filter((plat) => plat.category === selectedCategory)
+    ? db.filter((plat) => plat.pays === selectedCategory)
     : [];
 
   return (
@@ -51,7 +51,8 @@ export default function Admin() {
         <div className='header'>
           <button onClick={()=>{navigate('/')}}>Retour à l'acceuil</button>
           <h1>Our Recettes</h1>
-          <button onClick={()=>{navigate('/Recettes')}}>Admin</button>
+          <button onClick={()=>{navigate('/Recettes')}}>Recettes</button>
+          <button onClick={()=>{navigate('/addRec')}}>Ajouter une recette</button>
         </div>
         <div className='card'>
           {filteredPlats.map((plat) => (
