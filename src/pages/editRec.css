@@ -1,0 +1,68 @@
+.edit-rec-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.edit-rec-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff7b00;
+}
+
+/* FORM STYLE */
+.edit-rec-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-right: 15px;
+}
+
+.edit-rec-container label {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.edit-rec-container input,
+.edit-rec-container textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: #fafafa;
+  transition: border 0.2s ease;
+}
+
+.edit-rec-container input:focus,
+.edit-rec-container textarea:focus {
+  border-color:#ff7b00;
+  outline: none;
+}
+
+.edit-rec-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* BUTTON */
+.edit-rec-container button {
+  background: #ff7b00;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+
+
