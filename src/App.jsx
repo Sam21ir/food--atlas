@@ -1,17 +1,12 @@
 import React from 'react';
-import { Routes ,BrowserRouter ,Route, Link } from 'react-router';
-import navbar from './components/navbar';
-import footer from './components/footer';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar'; 
+import Footer from './components/Footer';
+import Home from './pages/Home';
 import Recettes from './pages/Recettes';
-import Delete from './pages/Delete';
-import Admin from './pages/Admin';
-import addRec from './pages/addRec';
-import EditRec from './pages/editRec';
-import PopUp from './components/PopUp';
+import Contact from './pages/Contact';
 
-
-
-export default function App() {
+function App() {
   return (
       
       <BrowserRouter>

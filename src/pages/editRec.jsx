@@ -35,9 +35,7 @@ export default function EditRec() {
           description: rec.description,
           ingredients: rec.ingredients.join(", "),
           etapes: rec.etapes.join("\n"),
-        
-        })
-        console.log(rec);
+        });
       })
       .catch((err) => console.error(err));
   }, [id]);
@@ -65,12 +63,12 @@ export default function EditRec() {
 
     try {
       await axios.put(`http://localhost:3001/recipes/${id}`, update);
+
       setShowPopup(false);
-       toast.success("Recette mise à jour avec succès !");
-      navigate("/Recettes"); // go back to card list
+      navigate("/recettes"); // go back to card list
     } catch (error) {
       console.error(error);
-       toast.error("Erreur lors de la mise à jour !");
+      alert("Error updating recipe.");
     }
 
     setLoading(false);
@@ -143,3 +141,7 @@ export default function EditRec() {
     </div>
   );
 }
+
+
+
+
