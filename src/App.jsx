@@ -1,8 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar'; 
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Recettes from './pages/Recettes';
+import Contact from './pages/Contact';
 
-export default function App() {
+function App() {
   return (
-    <div> Hello, World!</div>
+      
+      <BrowserRouter>
+      <navbar/>
+        <Routes>
+          <Route path="/" element={<home/>} />
+          <Route path="/Recettes" element={<Recettes/>} />
+          <Route path="/delete" element={<Delete/>} />
+          <Route path="/Admin"  element={<Admin/>}  />
+          <Route path="/addRec" element={<addRec/>} />
+          <Route path="/EditRec/:id" element={<EditRec/>} />
+        </Routes>
+        
+        <footer/>
+      </BrowserRouter>
+    
   )
 }
+
+
+
+
+
 
