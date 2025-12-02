@@ -8,22 +8,26 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        <Navbar /> 
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Recettes" element={<Recettes />} />
-            <Route path="/contact" element={<Contact />} />
-           
-          </Routes>
-        </main>
-
-        <Footer />
-      </div>
-    </Router>
-  );
+      
+      <BrowserRouter>
+      <navbar/>
+        <Routes>
+          <Route path="/" element={<home/>} />
+          <Route path="/Recettes" element={<Recettes/>} />
+          <Route path="/delete" element={<Delete/>} />
+          <Route path="/Admin"  element={<Admin/>}  />
+          <Route path="/addRec" element={<addRec/>} />
+          <Route path="/EditRec/:id" element={<EditRec/>} />
+        </Routes>
+        
+        <footer/>
+      </BrowserRouter>
+    
+  )
 }
 
-export default App;
+
+
+
+
+

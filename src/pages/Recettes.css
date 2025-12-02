@@ -1,0 +1,167 @@
+
+/* --- Couleurs de la palette --- */
+:root {
+  --color-dark: #1C1C1C; /* Noir Absolu */
+  --color-light-bg: #F7F7F0; /* Blanc Cassé */
+  --color-accent: #FF6B35; /* Orange Safrané Vif */
+  --color-text-light: #FFFFFF;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 1. Mise en page principale (Grille + Conteneur) */
+/* ---------------------------------------------------------------------- */
+
+.RecettesContainer {
+  display: flex; 
+  min-height: 100vh;
+  background-color: var(--color-light-bg); /* Fond de page principal */
+  font-family: sans-serif; /* Remplacer par une police moderne si choisie */
+}
+
+/* ---------------------------------------------------------------------- */
+/* 2. Sidebar (Filtres) */
+/* ---------------------------------------------------------------------- */
+
+.sideBare {
+  width: 250px; /* Largeur fixe pour les filtres */
+  padding: 30px 20px;
+  background-color: var(--color-dark); /* Fond noir élégant */
+  color: var(--color-text-light);
+  box-shadow: 2px 0 10px var(--color-shadow);
+}
+
+.sideBare h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sideBare hr {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.2); /* Ligne de séparation subtile */
+  margin-bottom: 20px;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+}
+
+.buttonDiv button {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* État actif ou survol (Utilise l'orange pour l'accentuation) */
+.buttonDiv button:hover {
+  background-color: rgba(255, 107, 53, 0.1); /* Orange très transparent */
+  color: var(--color-accent); /* Texte en orange */
+}
+
+
+/* 3. Section des Plats (Contenu principal) */
+
+
+.Plats {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.Plats h1 {
+  font-size: 2.5rem;
+  color: var(--color-dark);
+  margin-bottom: 60px;
+  margin-left: 120px;
+  text-align: center;
+}
+
+.header{
+display: flex;
+flex-direction: row;
+height: 40px;
+margin-bottom: 40px;
+gap: 60px;
+}
+
+.header button {
+  background: var(--color-accent);
+  border: none;
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 8px 10px;
+  /* height: 40px; */
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* État actif ou survol (Utilise l'orange pour l'accentuation) */
+.buttonDiv button:hover {
+  background-color: rgba(255, 107, 53, 0.1); /* Orange très transparent */
+  color: var(--color-accent); /* Texte en orange */
+}
+
+
+/* La grille des recettes */
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); /* Grille responsive */
+  gap: 50px;
+}
+
+/* 4. Carte de Recette (Élément Individuel) */
+
+
+.card > div {
+  background-color: var(--color-text-light); /* Fond de carte blanc */
+  border-radius: 12px;
+  border: #FF6B35  1px;
+  overflow: hidden;
+  box-shadow: 55 4px 10px var(--color-accent);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card div:hover {
+  transform: translateY(-5px); /* Effet 3D léger au survol */
+  box-shadow: 0 8px 15px rgba(221, 120, 62, 0.15);
+}
+
+.card a {
+  text-decoration: none; /* Supprime le soulignement du Link */
+  color: inherit;
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  padding: 5px 15px;
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* Style spécifique pour la catégorie/pays (plus discret) */
+.card h3:nth-of-type(2) {
+  font-size: 0.9rem;
+  color: var(--color-accent); /* Couleur d'accent pour la catégorie */
+  margin-bottom: 10px;
+}
+
+
+/*===============================popUpContainer===================================*/
+
