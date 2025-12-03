@@ -1,26 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import Navbar from './components/Navbar'; 
-import Footer from './components/Footer';
-import Home from './pages/Home';
+import Navbar from './components/navbar'; 
+import Footer from './components/footer';
+import Home from './pages/home';
+import Contact from "./pages/Contact";
 import Recettes from './pages/Recettes';
-import Contact from './pages/Contact';
+import EditRec from './pages/editRec';
+import Admin from './pages/Admin';
+import { Toaster } from 'react-hot-toast';
+import AddRec from './pages/addRec';
 
-function App() {
+
+// const Recipes = () => <div>Page Recettes</div>;
+// const Details = () => <div>Page Détails</div>;
+// const Admin = () => <div>Espace Admin</div>;
+
+
+export default function App() {
   return (
       
       <BrowserRouter>
-      <navbar/>
+      <Navbar/>
         <Routes>
-          <Route path="/" element={<home/>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/Recettes" element={<Recettes/>} />
-          <Route path="/delete" element={<Delete/>} />
           <Route path="/Admin"  element={<Admin/>}  />
-          <Route path="/addRec" element={<addRec/>} />
+          <Route path="/addRec" element={<AddRec/>} />
           <Route path="/EditRec/:id" element={<EditRec/>} />
+          <Route path="/Contact" element={<Contact/>} />
         </Routes>
         
-        <footer/>
+        <Footer/>
       </BrowserRouter>
     
   )

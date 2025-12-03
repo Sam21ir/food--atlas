@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import PopUp from "../components/PopUp";
+import '../addRecStyle.css';
 
 export default function AddRec() {
   const handleImageUpload = async (e) => {
@@ -160,7 +161,7 @@ export default function AddRec() {
           required
         />
 
-        <button type="submit" disabled={loading}>
+        <button className="tstBtn" type="submit" disabled={loading}>
           {loading ? "Enregistrement..." : "Enregistrer"}
         </button>
       </form>

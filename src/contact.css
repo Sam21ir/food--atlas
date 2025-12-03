@@ -1,0 +1,141 @@
+.contact-page {
+  min-height: 100vh;
+  background-color: #F7F7F0;
+  padding: 80px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contact card */
+.contact-container {
+  max-width: 650px;
+  width: 100%;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+/* Titles */
+.contact-container h1 {
+  font-size: 2.5rem;
+  color: #1C1C1C;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+/* The form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1C1C1C;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #F7F7F0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FF6B35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Submit button – same style as CTA */
+.submit-btn {
+  background-color: #FF6B35;
+  color: #F7F7F0;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #e05f2c;
+  transform: translateY(-2px);
+}
+
+/* Success message */
+.success-message {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-message h2 {
+  color: #27ae60;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 35px 20px;
+  }
+
+  .contact-container h1 {
+    font-size: 2rem;
+  }
+}
