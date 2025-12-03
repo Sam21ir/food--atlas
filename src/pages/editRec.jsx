@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PopUp from "../components/PopUpAdd";
-import { useParams, useNavigate } from "react-router-dom";
+// import PopUp from "../components/PopUpAdd";
+import PopUp from "../components/PopUp";
+import './editRec.css';
+import { useParams, useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 export default function EditRec() {
   const { id } = useParams();
@@ -60,12 +63,12 @@ export default function EditRec() {
 
     try {
       await axios.put(`http://localhost:3001/recipes/${id}`, update);
-
       setShowPopup(false);
+       toast.success("Recette mise à jour avec succès !");
       navigate("/recettes"); // go back to card list
     } catch (error) {
       console.error(error);
-      alert("Error updating recipe.");
+       toast.error("Erreur lors de la mise à jour !");
     }
 
     setLoading(false);

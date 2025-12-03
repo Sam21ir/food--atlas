@@ -1,0 +1,72 @@
+{
+  "recipes": [
+    {
+      "nom": "Tagine au poulet",
+      "pays": "Moroccan",
+      "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png",
+      "description": "plat traditionnel marocain composé de semoule, légumes et viandes, servi lors des grandes occasions.",
+      "ingredients": [
+        "Poulet",
+        "Carottes",
+        "Courgettes",
+        "Pois chiches",
+        "Poulet",
+        "Agneau",
+        "Huile d’olive",
+        "Épices couscous"
+      ],
+      "etapes": [
+        "Faire chauffer l’huile d’olive dans une marmite.",
+        "Ajouter les légumes coupés en morceaux.",
+        "Incorporer les viandes et laisser mijoter.",
+        "Préparer la semoule à part.",
+        "Servir la semoule avec les légumes et la viande."
+      ],
+      "id": "8639"
+    },
+    {
+      "nom": "Tacos",
+      "pays": "Mexican",
+      "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png",
+      "description": "faite comme caa",
+      "ingredients": [
+        "tomates",
+        "orange",
+        "lobie"
+      ],
+      "etapes": [
+        "1.jsc z",
+        "2.dbzhdbgezuh",
+        "3.dyb\"dgvh"
+      ],
+      "id": "5916"
+    },
+    {
+      "nom": "Pizza",
+      "pays": "Italian",
+      "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png",
+      "description": "description",
+      "ingredients": [
+        "oil\nolive\nsel"
+      ],
+      "etapes": [
+        "first",
+        "second"
+      ],
+      "id": "5ef5"
+    },
+    {
+      "id": "5ef8",
+      "nom": "Paella",
+      "pays": "Spanish",
+      "image": "https://res.cloudinary.com/dgqoop9qz/image/upload/v1764084756/france_un5tcw.png",
+      "description": "ddddd",
+      "ingredients": [
+        "ddddddd"
+      ],
+      "etapes": [
+        "dddddddd"
+      ]
+    }
+  ]
+}
