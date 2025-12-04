@@ -30,6 +30,7 @@
 /* SIDEBAR */
 .sideBare {
   width: 250px;
+  margin-top: 68px;
   background: var(--color-dark);
   color: var(--color-light-bg);
   padding: 20px;

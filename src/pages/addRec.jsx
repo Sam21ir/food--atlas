@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import PopUp from "../components/PopUp";
-import '../addRecStyle.css';
+import PopUpAdd from "../components/PopUpAdd";
+import toast from "react-hot-toast";
+import '../addRecStyle.css'
 
 export default function AddRec() {
   const handleImageUpload = async (e) => {
@@ -15,7 +16,7 @@ export default function AddRec() {
 
   try {
     const res = await axios.post(
-      `https://api.cloudinary.com/v1_1/dgqoop9qz/image/upload`,
+      "https://api.cloudinary.com/v1_1/dgqoop9qz/image/upload",
       formDataCloud
     );
 
@@ -82,7 +83,7 @@ export default function AddRec() {
     };
 
     try {
-      await axios.post("http://localhost:3001/recipes", newRecipe); /*npx json-server --watch db.json --port 3001*/
+      await axios.post("http://localhost:3001/recipes", newRecipe); 
       // Reset form
       setFormData({
         nom: "",
@@ -161,7 +162,7 @@ export default function AddRec() {
           required
         />
 
-        <button className="tstBtn" type="submit" disabled={loading}>
+        <button type="submit" disabled={loading}>
           {loading ? "Enregistrement..." : "Enregistrer"}
         </button>
       </form>

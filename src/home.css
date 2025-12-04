@@ -1,7 +1,15 @@
-h1, h2, h3 {
+ h2, h3 {
     color: #1C1C1C; 
 }
 
+.homeTitle{
+  color: white;
+  font-size: 82px;
+  font-family:'Times New Roman', Times, serif;
+  font-style: oblique;
+  font-weight: bold;
+  margin-top: 30px;
+}
 .cta-button {
     background-color: #FF6B35; 
     color: #F7F7F0;
@@ -29,6 +37,7 @@ h1, h2, h3 {
 }
 
 .hero-video {
+    background: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 0;
     left: 0;
@@ -59,9 +68,9 @@ h1, h2, h3 {
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    /* font-size: 48px; */
     margin-bottom: 15px;
-    color: #F7F7F0;
+    /* color: #F7F7F0; */
 }
 
 .hero-content p {
@@ -81,6 +90,11 @@ h1, h2, h3 {
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
+}
+
+.aboutTitle{
+  margin-top: 60px;
+  text-align: center;
 }
 
 .about-image {
@@ -171,5 +185,48 @@ h1, h2, h3 {
 .category-card p {
   margin: 0;
   color: #666666;
+  font-size: 14px;
+}
+
+.features-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.feature-card {
+  background: #fafaf6;
+  width: 260px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: #ffe8d9;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.feature-card p {
+  color: #777;
   font-size: 14px;
 }

@@ -9,6 +9,7 @@ import EditRec from './pages/editRec';
 import Admin from './pages/Admin';
 import { Toaster } from 'react-hot-toast';
 import AddRec from './pages/addRec';
+import Details from './pages/Details';
 
 
 // const Recipes = () => <div>Page Recettes</div>;
@@ -21,12 +22,14 @@ export default function App() {
       
       <BrowserRouter>
       <Navbar/>
+      <Toaster/>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/Recettes" element={<Recettes/>} />
           <Route path="/Admin"  element={<Admin/>}  />
           <Route path="/addRec" element={<AddRec/>} />
           <Route path="/EditRec/:id" element={<EditRec/>} />
+          <Route path="/Details/:id" element={<Details/>} />
           <Route path="/Contact" element={<Contact/>} />
         </Routes>
         
