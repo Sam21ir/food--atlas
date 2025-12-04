@@ -82,7 +82,7 @@ export default function AddRec() {
     };
 
     try {
-      await axios.post("http://localhost:3001/recipes", newRecipe);
+      await axios.post("http://localhost:3001/recipes", newRecipe); /*npx json-server --watch db.json --port 3001*/
       // Reset form
       setFormData({
         nom: "",
@@ -92,7 +92,7 @@ export default function AddRec() {
         ingredients: "",
         etapes: ""
       });
-
+      toast.success("Recette ajouté avec succès !");
       setShowPopup(false); // Close popup
     } catch (error) {
       console.error(error);
@@ -167,7 +167,7 @@ export default function AddRec() {
       </form>
 
       {showPopup && (
-        <PopUp 
+        <PopUpAdd
           onConfirm={handleConfirm}
           onCancel={handleCancel}
         />

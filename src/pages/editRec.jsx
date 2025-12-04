@@ -63,12 +63,12 @@ export default function EditRec() {
 
     try {
       await axios.put(`http://localhost:3001/recipes/${id}`, update);
-
       setShowPopup(false);
+       toast.success("Recette mise à jour avec succès !");
       navigate("/recettes"); // go back to card list
     } catch (error) {
       console.error(error);
-      alert("Error updating recipe.");
+       toast.error("Erreur lors de la mise à jour !");
     }
 
     setLoading(false);
