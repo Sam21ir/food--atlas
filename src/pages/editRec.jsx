@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import PopUp from "../components/PopUpAdd";
-import PopUp from "../components/PopUp";
-import './editRec.css';
-import { useParams, useNavigate } from "react-router";
+import PopUp from "../components/PopUpAdd";
+import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 export default function EditRec() {
