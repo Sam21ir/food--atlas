@@ -24,26 +24,29 @@ export default function Card({ plat, isAdmin = false }) {
      <div className="plat-card">
       <Link to={`/details/${plat.id}`}>
         <img src={plat.image} alt={plat.nom} />
-
-        <h3>{plat.nom}</h3>
-        <p>{plat.pays}</p>
-        </Link>
-
-        {isAdmin && (
-        <div className="admin-buttons">
-          <button className="delete-btn" onClick={()=>{
-            setRecipeToDelete(plat.id);
-            setPopUp(true);}
-          }>Delete
-          </button>
-
-          <button onClick={() => navigate(`/EditRec/${plat.id}`)}>
-              Modifier
-          </button>
+        <div className='titleCatg'>
+          <h3>{plat.nom}</h3>
+          <p>{plat.pays}</p>
         </div>
-              
-        )}
-      
+        </Link>
+        <div>
+                {isAdmin && (
+            <div className="admin-buttons">
+              <button className="delete-btn" onClick={()=>{
+                setRecipeToDelete(plat.id);
+                setPopUp(true);}
+              }>Delete
+              </button>
+
+              <button className="update-btn" onClick={() => navigate(`/EditRec/${plat.id}`)}>
+                  Modifier
+              </button>
+            </div>
+                  
+            )}
+          </div>
+
+        
          {popUp && (
           <div className='popUpOverlay'>
               <div className="popUpContainer">

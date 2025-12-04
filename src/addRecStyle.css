@@ -45,7 +45,7 @@ textarea:focus {
   box-shadow: 0 0 4px rgba(255, 123, 0, 0.5);
 }
 /* Button */
-button {
+tstBtn {
   padding: 12px;
   font-size: 18px;
   cursor: pointer;
@@ -57,6 +57,6 @@ button {
   font-weight: bold;
 }
 
-button:hover {
+tstBtn:hover {
   background: #e56f00;
 }

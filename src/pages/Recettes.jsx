@@ -59,9 +59,9 @@ export default function Recettes() {
       <section className='Recettes'>
         <section className='header'>
         
-          <button onClick={()=>{navigate('/')}}>Retour à l'acceuil</button>
+          <button onClick={()=>{navigate('/')}}>🠔Retour à l'acceuil</button>
           <h1>Our Recettes</h1>
-          <button onClick={()=>{navigate('/Admin')}}>Admin</button>
+          {/* <button onClick={()=>{navigate('/Admin')}}>Admin</button> */}
 
           {/* 🔍 SEARCH INPUT */}
         <input
