@@ -6,7 +6,7 @@ export default function Card({ plat, isAdmin = false }) {
   const navigate=useNavigate();
 
   const [popUp,setPopUp]=useState(false)
-   const [recipeToDelete, setRecipeToDelete] = useState(null);
+  const [recipeToDelete, setRecipeToDelete] = useState(null);
 
   const Supprimer = ()=>{
       axios

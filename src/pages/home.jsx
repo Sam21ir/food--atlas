@@ -10,31 +10,44 @@ import heroVideo from '../assets/herovid.mp4';
 import pizzaImg from '../assets/pizza.jpg';
 import tagineImg from '../assets/tagine.jpg';
 import tacosImg from '../assets/tacos.jpg';
-import aboutImg from '../assets/about.jpg';
-import abouteImg from '../assets/aboute.jpg';
+
+
+import platMaroc from "../assets/flags/maroc.jpg";
+import platItaly from "../assets/flags/italien.jpg";
+import platSpain from "../assets/flags/spain.jpg";
+import platMexic from "../assets/flags/mexican.jpg";
 
 const CTA_TEXT = "VOIR RECETTES";
 
-const categories = [
-  { country: 'Maroc', image: tagineImg, label: 'Tagine' },
-  { country: 'Italie', image: pizzaImg, label: 'Pizza' },
-  { country: 'Mexique', image: tacosImg, label: 'Tacos' },
-];
+
+const categoryImages = {
+  Moroccan: platMaroc,
+  Mexican: platItaly,
+  Italian: platSpain,
+  Spanish: platMexic,
+};
+
 
 const Home = () => {
 
+  const [category,setCategory]=useState([]);
   const [db,setDb]=useState([]);
+
   useEffect(()=>{
     axios
       .get("http://localhost:3001/recipes")
       .then((res)=>{
         setDb(res.data)
+        const uniqueCategories = [...new Set(res.data.map(plat => plat.pays))];
+        setCategory(uniqueCategories);
+        
       })
       .catch((err)=>{
         console.log("error in fetching data",err);
       })
   },[])
 
+  
 
   return (
     <div>
@@ -94,20 +107,15 @@ const Home = () => {
       <section className="categories-section">
         <h2 className="section-title">Our Catégories</h2>
         <div className="categories-grid">
-          {/* {categories.map((cat, index) => (
+          {category.map((cat, index) => (
             <div className="category-card" key={index}>
-              <img src={cat.image} alt={cat.label} />
-              <h3>{cat.label}</h3>
-              <p>{cat.country}</p>
+              <img 
+                src={categoryImages[cat] }  
+                alt={cat}
+              />
+              <h3>{cat}</h3>
             </div>
-          ))} */}
-          {db.map((cat,index)=>(
-            <div className="category-card" key={index}>
-              <img src={cat.image}  />
-              {/* <h3>{cat.nom}</h3> */}
-              <h3>{cat.pays}</h3>
-            </div>
-          ))}
+           ))}
         </div>
       </section>
     </div>

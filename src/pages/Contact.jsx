@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { sendEmail } from "../EmailJs";   // IMPORT IT HERE
 import "../contact.css";
 
 function Contact() {
+  const formRef = useRef();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,8 +29,14 @@ function Contact() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      setSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
+      sendEmail(formRef)
+        .then(() => {
+          setSuccess(true);
+          setFormData({ name: "", email: "", message: "" });
+        })
+        .catch(() => {
+          alert("Erreur: Impossible d'envoyer le message.");
+        });
     }
   };
 
@@ -41,7 +50,7 @@ function Contact() {
               Une question ? Une suggestion ? Envoyez-nous un message.
             </p>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
               <div className="form-group">
                 <label>Nom</label>
                 <input
@@ -97,5 +106,6 @@ function Contact() {
     </div>
   );
 }
+
 
 export default Contact;
