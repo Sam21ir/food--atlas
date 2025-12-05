@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGlobe, FaUtensils, FaHeart } from "react-icons/fa";
 import '../home.css';
+import axios from 'axios';
 
 // IMPORTS DE TES FICHIERS DANS assets
 // adapte les noms / extensions si nécessaire
@@ -20,6 +22,20 @@ const categories = [
 ];
 
 const Home = () => {
+
+  const [db,setDb]=useState([]);
+  useEffect(()=>{
+    axios
+      .get("http://localhost:3001/recipes")
+      .then((res)=>{
+        setDb(res.data)
+      })
+      .catch((err)=>{
+        console.log("error in fetching data",err);
+      })
+  },[])
+
+
   return (
     <div>
 
@@ -34,46 +50,62 @@ const Home = () => {
           playsInline
         />
         <div className="hero-content">
-          <h1>Food Atlas</h1>
+          <h1 className='homeTitle'>Welcome to Food Atlas</h1>
           <p>
-            Explorez des recettes authentiques venues du Maroc, d&apos;Italie, du Mexique et d&apos;ailleurs.
+            Explorez des recettes authentiques du monde entier, préparées avec passion et partagées avec amour.
           </p>
           <Link to="/recettes" className="cta-button">
-            {CTA_TEXT}
+            Explorer les recettes
           </Link>
         </div>
       </section>
 
       {/* SECTION À PROPOS */}
-      <section className="about-us-section">
-        <h2>À propos de Food Atlas</h2>
-        <div className="about-content">
-          <div className="about-image">
-            <img src={aboutImg} alt="Food Atlas" />
+      <h1 className='aboutTitle'>Porqoui nous choisir</h1>
+      <section className="features-section">
+
+          <div className="feature-card">
+            <div className="icon-wrapper">
+              <FaGlobe size={50} color="#ff8c5a" />
+            </div>
+            <h3>Cuisine Mondiale</h3>
+            <p>Des recettes authentiques de tous les continents</p>
           </div>
-          <div className="about-text">
-            <p>
-              Food Atlas t&apos;invite à voyager à travers des saveurs et des traditions culinaires du monde entier.
-            </p>
-            <Link to="/recettes" className="cta-button secondary">
-              Découvrir les recettes
-            </Link>
+
+          <div className="feature-card">
+            <div className="icon-wrapper">
+              <FaUtensils size={50} color="#ff8c5a" />
+            </div>
+            <h3>Facile à Suivre</h3>
+            <p>Instructions claires étape par étape</p>
           </div>
-          <div className="about-image">
-            <img src={aboutImg} alt="Food Atlas" />
+
+          <div className="feature-card">
+            <div className="icon-wrapper">
+              <FaHeart size={50} color="#ff8c5a" />
+            </div>
+            <h3>Fait Maison</h3>
+            <p>Des ingrédients frais et naturels</p>
           </div>
-        </div>
-      </section>
+     </section>
+
 
       {/* SECTION CATÉGORIES AVEC TES 3 IMAGES */}
       <section className="categories-section">
-        <h2 className="section-title">Catégories populaires</h2>
+        <h2 className="section-title">Our Catégories</h2>
         <div className="categories-grid">
-          {categories.map((cat, index) => (
+          {/* {categories.map((cat, index) => (
             <div className="category-card" key={index}>
               <img src={cat.image} alt={cat.label} />
               <h3>{cat.label}</h3>
               <p>{cat.country}</p>
+            </div>
+          ))} */}
+          {db.map((cat,index)=>(
+            <div className="category-card" key={index}>
+              <img src={cat.image}  />
+              {/* <h3>{cat.nom}</h3> */}
+              <h3>{cat.pays}</h3>
             </div>
           ))}
         </div>

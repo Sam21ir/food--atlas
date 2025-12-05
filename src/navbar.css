@@ -1,12 +1,14 @@
 .navbar {
-    background-color: transparent; 
+    background-color: #FF6B35; 
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute; 
+    position: fixed; 
     width: 90%;
-    z-index: 100;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 }
 
 .logo-text {

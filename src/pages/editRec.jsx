@@ -3,6 +3,7 @@ import axios from "axios";
 import PopUp from "../components/PopUpAdd";
 import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import './editRec.css'
 
 export default function EditRec() {
   const { id } = useParams();
